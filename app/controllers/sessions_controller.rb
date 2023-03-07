@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
       if @user
         if BCrypt::Password.new(@user["password"]) == params["password"]
           session["user_id"] = @user["id"]
+          cookies.delete :non_user
           redirect_to "/places"
         else
           flash["notice"] = "Please enter username and password"

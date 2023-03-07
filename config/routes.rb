@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   get "/login", :controller => "sessions", :action => "new"
   get "/logout", :controller => "sessions", :action => "destroy"
+  get "/no_user", :controller => "sessions", :action => "new"
 end

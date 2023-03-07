@@ -1,9 +1,17 @@
 <h1>Places</h1>
 
 <ul>
-  <% for place in @places %>
-      <li><a href="/places/<%= place["id"] %>"><%= place["name"] %></a></li>
-  <% end %>
+  
+  <% if @current_user %>  
+      <% for place in @places %>
+        <li><a href="/places/<%= place["id"] %>"><%= place["name"] %></a></li>
+      <% end %>
+    <% else %>
+      <% cookies[:non_user] = "non_user" %>
+      <% for place in @places %>
+        <li><a href="/no_user"><%= place["name"] %></a></li>
+      <% end %>
+    <% end %>
 </ul>
 
 <p>
@@ -11,3 +19,4 @@
   <a href="/places/new">New place</a>
   <% end %>
 </p>
+
