@@ -1,5 +1,9 @@
 <h1>Login</h1>
 
+<% if current_page?('/no_user') %>
+  <p>You must be logged in to see Places</p>
+<% end %>
+
 <%= form_with :url => "/sessions" do |form| %>
   <p>
     <%= form.label "email" %>
