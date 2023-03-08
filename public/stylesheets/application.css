@@ -1,0 +1,16 @@
+label {
+    display: inline-block;
+    width: 150px;
+    text-align:start;
+}
+
+input[type=submit] {
+	background:#EAEAEA;
+	color: black;
+	border-style: solid;
+    border-radius: 5px;
+	box-shadow: none;
+	text-shadow: none;
+    width: 100px;
+    height: 40px;
+}

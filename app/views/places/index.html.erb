@@ -2,8 +2,11 @@
 <h1>Places</h1>
 
 <% if @places.all.count == 0 %>
-
-  <p>There are no places yet, sign up a create the first one!</p>
+  <% if @current_user %>
+    <p>There are no places yet, <a href="/places/new">create</a> the first one!</p>
+  <% else %>
+    <p>There are no places yet, <a href="/users/new">sign up</a> to create the first one!</p>
+  <% end %>
 
 <% else %>
 
