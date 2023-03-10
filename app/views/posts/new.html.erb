@@ -3,6 +3,8 @@
 
 <%= form_with :model => @post do |form| %>
   <%= form.hidden_field "place_id" %>
+  <%= form.hidden_field "user_id" %>
+  
   <p>
     <%= form.label "title" %>
     <%= form.text_field "title" %>
@@ -23,4 +25,5 @@
     <%= form.submit %>
   </p>
 <% end %>
+
 </div>
